@@ -23,17 +23,19 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
 <head>
     <title><?= Html::encode($this->title) ?></title>
-    <style>
-        .carousel-item {
-            min-height: 100vh;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+    .carousel-item {
+        min-height: 100vh;
+    }
 
-        .carousel-item img {
-            height: 100vh;
-            object-fit: cover;
-        }
-    </style>
-    <?php $this->head() ?>
+    .carousel-item img {
+        height: 100vh;
+        object-fit: cover;
+    }
+</style>
+<?php $this->head() ?>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -164,120 +166,128 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         </div>
     </main>
 
-    <footer>
-        <div class="bg-dark">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 text-white py-3 p-sm-5 g-4 g-lg-3">
-                    <div class="col">
-                        <h5 class=" fw-bold">COMPANY</h5>
-                        <p class="m-0 mb-2">
-                            Samapaloc, Bolinao, Pangasinan, Carizal st. 085
+    <footer class="bg-dark m-0 ">
+        <div class="container p-3 p-md-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 text-white g-4 g-lg-3">
+                <div class="col">
+                    <!-- company section -->
+                    <h5>
+                        COMPANY
+                    </h5>
+                    <div>
+                        <p>Sampaloc Bolinao, Pangasinan</p>
+                        <b>Phone</b> 0947325097
                         </p>
-                        <p class="m-0">
-                            <span class="fw-bold">Phone</span> 0947325097
-                        </p>
-                        <p class="m-0">
-                            <span class="fw-bold">Email</span> example@gmail.com
+                        <p>
+                            <b>Email</b> example@gmail.com
                         </p>
                     </div>
-                    <div class="col ">
-                        <div>
-                            <h6 class="fw-bold">Usefull Links</h6>
-                            <div class="footer-contents">
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    Home
-                                </p>
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    About us
-                                </p>
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    Services
-                                </p>
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    Terms of service
-                                </p>
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    Privacy policy
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col ">
-                        <div>
-                            <h6 class="fw-bold">Our Services</h6>
-                            <div class="footer-contents">
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    Web Design
-                                </p>
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    Web Development
-                                </p>
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    Product Management
-                                </p>
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    Marketing
-                                </p>
-                                <p class="m-2">
-                                    <span><i class="fa-solid fa-chevron-right"></i></span>
-                                    Graphic Design
-                                </p>
-                            </div>
-                        </div>
+                </div>
 
-                    </div>
-                    <div class="col">
-                        <h6 class="fw-bold">Join our Newsletter</h6>
-                        <div class="footer-contents">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing eliolest
-                                etur adipisicing eliolest
-                            </p>
-                            <div class="d-flex">
-                                <input class="news-letter-input" type="text" />
-                                <button class="subscribe-btn">Subscribe</button>
-                            </div>
+                <!-- useful link -->
+                <div class="col">
+                    <h5>
+                        Userful Link
+                    </h5>
+                    <ul class="list-unstyled ps-2">
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Home</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">About us</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Services</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Terms of service</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Privacy policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- our services -->
+                <div class="col">
+                    <h5>
+                        Our Services
+                    </h5>
+                    <ul class="list-unstyled ps-2">
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Web Design</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Web Development</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Product Management</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Marketing</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Graphic Design</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- newsletter -->
+                <div class="col">
+                    <h5 class="fw-bold">Join our Newsletter</h5>
+                    <div class="w-100">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing eliolest
+                            etur adipisicing eliolest
+                        </p>
+                        <div class="d-flex">
+                            <input class="w-100" type="text" />
+                            <button class="bg-success text-white border-0 rounded-end-2 py-2 px-4">Subscribe</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="copyright-container">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center py-3">
-                    <div>
-                        <p class="m-0">
-                            &copy; Copyright
-                            <span class="fw-bold">TestSite</span>
-                            . All Rights Reserved
+        <!-- bottom footer -->
+        <div class="bg-black px-5 py-2 m-0">
+            <div class="container px-0 px-md-5 py-2">
+                <div class="row text-white d-flex justify-content-between text-center g-3">
+                    <!-- Left -->
+                    <div class="col-auto d-flex align-items-center">
+                        <p class="mb-0" style="font-size: 13px;">
+                            &copy; Copyright <b>TestSite</b>. All Rights Reserved
                         </p>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center gap-2">
-                        <div class="footer-icon p-1 rounded">
+
+                    <!-- Right -->
+                    <div class="col-auto">
+                        <span class="p-2 bg-dark rounded me-1">
                             <i class="fa-brands fa-twitter"></i>
-                        </div>
-                        <div class="footer-icon p-1 rounded">
+                        </span>
+                        <span class="p-2 bg-dark rounded me-1">
                             <i class="fa-brands fa-facebook-f"></i>
-                        </div>
-                        <div class="footer-icon p-1 rounded">
+                        </span>
+                        <span class="p-2 bg-dark rounded me-1">
                             <i class="fa-brands fa-instagram"></i>
-                        </div>
-                        <div class="footer-icon p-1 rounded">
+                        </span>
+                        <span class="p-2 bg-dark rounded me-1">
                             <i class="fa-brands fa-linkedin-in"></i>
-                        </div>
+                        </span>
                     </div>
+
                 </div>
             </div>
+        </div>
     </footer>
 
     <?php $this->endBody() ?>
