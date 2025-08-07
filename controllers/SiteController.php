@@ -217,7 +217,9 @@ class SiteController extends Controller
 
     public function actionServices()
     {
-        return $this->render('services');
+        $services = $this->getServicesData();
+
+        return $this->render('services', ['services' => $services]);
     }
 
     public function actionPricing()
