@@ -12,6 +12,83 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
+    //dummy datas
+    private function getServicesData()
+    {
+        return [
+            [
+                'icon' => '<i class="fs-5 py-3 text-primary icon-ball fa-solid fa-basketball"></i>',
+                'title' => "Lorem Ipsum",
+                'description' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab nam tenetur obcaecati invedita, aperiam dolorem molestias. Corporis, accusamus ipsa?",
+            ],
+            [
+                'icon' => '<i class="fs-5 py-3 text-success icon-docs fa-regular fa-file-lines"></i>',
+                'title' => "Lorem Ipsum",
+                'description' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab nam tenetur obcaecati invedita, aperiam dolorem molestias. Corporis, accusamus ipsa?",
+            ],
+            [
+                'icon' => '<i class="fs-5 py-3 text-danger icon-speed fa-solid fa-gauge-simple-high"></i>',
+                'title' => "Lorem Ipsum",
+                'description' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab nam tenetur obcaecati invedita, aperiam dolorem molestias. Corporis, accusamus ipsa?",
+            ],
+            [
+                'icon' => '<i class="fs-5 py-3 text-warning icon-layer fa-solid fa-layer-group"></i>',
+                'title' => "Lorem Ipsum",
+                'description' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab nam tenetur obcaecati invedita, aperiam dolorem molestias. Corporis, accusamus ipsa?",
+            ],
+            [
+                'icon' => '<i class="fs-5 py-3 text-primary icon-tv fa-solid fa-tv"></i>',
+                'title' => "Lorem Ipsum",
+                'description' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab nam tenetur obcaecati invedita, aperiam dolorem molestias. Corporis, accusamus ipsa?",
+            ],
+            [
+                'icon' => '<i class="fs-5 py-3 text-success icon-bridge fa-solid fa-bridge"></i>',
+                'title' => "Lorem Ipsum",
+                'description' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab nam tenetur obcaecati invedita, aperiam dolorem molestias. Corporis, accusamus ipsa?",
+            ],
+        ];
+    }
+
+    private function getClientsData()
+    {
+        return [
+            ['image' => '<img class="w-25" src="https://diginsights.com/wp-content/uploads/2024/03/starbsloh.png.jpeg" alt="" />'],
+            ['image' => '<img class="w-25" src="https://diginsights.com/wp-content/uploads/2024/03/786NzPhpXo6G8hkutJkHTM-1200-80-1024x576.jpg" alt="" />'],
+            ['image' => '<img class="w-25" src="https://diginsights.com/wp-content/uploads/2024/03/applebig.png.jpeg" alt="" />'],
+            ['image' => '<img class="w-25" src="https://diginsights.com/wp-content/uploads/2024/03/mcds.png.jpeg" alt="" />'],
+            ['image' => '<img class="w-25" src="https://diginsights.com/wp-content/uploads/2024/03/coca.png.jpeg" alt="" />'],
+            ['image' => '<img class="w-25" src="https://diginsights.com/wp-content/uploads/2024/03/fedex-square.png.webp" alt="" />'],
+            ['image' => '<img class="w-25" src="https://diginsights.com/wp-content/uploads/2024/03/amazz.png.jpeg" alt="" />'],
+            ['image' => '<img class="w-25" src="https://diginsights.com/wp-content/uploads/2024/03/toyotalogo.png.jpeg" alt="" />'],
+        ];
+    }
+
+    private function getTeamsData()
+    {
+        return [
+            [
+                'image' => 'https://images.unsplash.com/photo-1670249040693-83d92a1be114?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D',
+                'name' => 'Mjay Humilde',
+                'title' => 'Web Developer'
+            ],
+            [
+                'image' => 'https://images.unsplash.com/photo-1749096291689-3368b6b7dc68?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D',
+                'name' => 'John Bravo',
+                'title' => 'Backend Developer'
+            ],
+            [
+                'image' => 'https://images.unsplash.com/photo-1606216769898-c88daccaa479?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGd1eSUyMHByb2ZpbGUlMjBvbiUyMGElMjBzdWl0fGVufDB8fDB8fHww',
+                'name' => 'Alberto Rizz',
+                'title' => 'Designer'
+            ],
+            [
+                'image' => 'https://images.unsplash.com/photo-1606216769783-a7dbe227a17f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGd1eSUyMHByb2ZpbGUlMjBvbiUyMGElMjBzdWl0fGVufDB8fDB8fHww',
+                'name' => 'Marky Johny',
+                'title' => 'DEV OPS'
+            ],
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -61,7 +138,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $services = $this->getServicesData();
+        $clients = $this->getClientsData();
+
+        return $this->render('index', ['services' => $services, 'clients' => $clients]);
     }
 
     /**
@@ -108,14 +188,20 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $teams = $this->getTeamsData();
+        $clients = $this->getClientsData();
+
+        return $this->render('about', ['teams' => $teams, 'clients' => $clients]);
     }
 
 
     public function actionTeam()
     {
-        return $this->render('team');
+        $teams = $this->getTeamsData();
+
+        return $this->render('team', ['teams' => $teams]);
     }
+
 
     public function actionTestimonial()
     {
