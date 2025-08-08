@@ -167,7 +167,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     </main>
 
     <footer class="bg-dark m-0 ">
-        <div class="container p-3 p-md-5">
+        <div class="container p-3 p-md-5 px-sm-0">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 text-white g-4 g-lg-3">
                 <div class="col">
                     <!-- company section -->
@@ -270,7 +270,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     </div>
 
                     <!-- Right -->
-                    <div class="col-auto">
+                    <div class="col-auto fs-6">
                         <span class="p-2 bg-dark rounded me-1">
                             <i class="fa-brands fa-twitter"></i>
                         </span>
