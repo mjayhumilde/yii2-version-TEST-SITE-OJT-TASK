@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7309b9d2e4518ad52988e780a875afc0",
+    "content-hash": "3397756b6b85c9e3ac9fff6206bc98bd",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -59,6 +59,21 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "bower-asset/leaflet",
+            "version": "v1.9.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Leaflet/Leaflet.git",
+                "reference": "d15112c9e8ac339f0f74f563959d0423d291308d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Leaflet/Leaflet/zipball/d15112c9e8ac339f0f74f563959d0423d291308d",
+                "reference": "d15112c9e8ac339f0f74f563959d0423d291308d"
+            },
+            "type": "bower-asset"
         },
         {
             "name": "bower-asset/punycode",
