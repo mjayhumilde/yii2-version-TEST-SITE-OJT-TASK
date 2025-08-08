@@ -255,6 +255,12 @@ class SiteController extends Controller
 
         return $this->render('blog', ['blogs' => $blogs]);
     }
+
+    public function actionSingleBlog()
+    {
+        return $this->render('singleBlog');
+    }
+
     public function actionRegister()
     {
         return $this->render('register');
