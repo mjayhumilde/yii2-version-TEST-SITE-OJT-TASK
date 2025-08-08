@@ -135,91 +135,39 @@
 
                      <h5 class="my-4 p-0">8 Comments</h5>
 
-                     <!-- comment card -->
-                     <div class="d-flex flex-column">
-                         <div class="d-flex gap-1">
-                             <img class="h-25"
-                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s"
-                                 alt="" />
-                             <div>
-                                 <h6 class="fw-bold m-0">
-                                     Kier Nino
-                                     <span class="px-2"><i class="fa-solid fa-reply"></i> Reply</span>
-                                 </h6>
-                                 <div class="text-muted">
-                                     <p class="m-0 text">09 jan, 2025</p>
-                                     <p>
-                                         Lorem ipsum dolor sit amet consectetur adipisicing
-                                         elit. Doloribus architecto expedita odit fuga. Ea,
-                                         ullam eius fugit, a, tenetur ipsam explicabo omnis
-                                         cupiditate ad cumque laborum distinctio at vero porro.
-                                     </p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="d-flex gap-1">
-                             <img class="h-25"
-                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s"
-                                 alt="" />
-                             <div>
-                                 <h6 class="fw-bold m-0">
-                                     Kier Nino
-                                     <span class="px-2"><i class="fa-solid fa-reply"></i> Reply</span>
-                                 </h6>
-                                 <div class="text-muted">
-                                     <p class="m-0 text">09 jan, 2025</p>
-                                     <p>
-                                         Lorem ipsum dolor sit amet consectetur adipisicing
-                                         elit. Doloribus architecto expedita odit fuga. Ea,
-                                         ullam eius fugit, a, tenetur ipsam explicabo omnis
-                                         cupiditate ad cumque laborum distinctio at vero porro.
-                                     </p>
-                                 </div>
-                             </div>
-                         </div>
-                         <!-- inner comment -->
-                         <div class="d-flex gap-1 ps-5">
-                             <img class="h-25"
-                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s"
-                                 alt="" />
-                             <div>
-                                 <h6 class="fw-bold m-0">
-                                     Kier Nino
-                                     <span class="px-2"><i class="fa-solid fa-reply"></i> Reply</span>
-                                 </h6>
-                                 <div class="text-muted">
-                                     <p class="m-0 text">09 jan, 2025</p>
-                                     <p>
-                                         Lorem ipsum dolor sit amet consectetur adipisicing
-                                         elit. Doloribus architecto expedita odit fuga. Ea,
-                                         ullam eius fugit, a, tenetur ipsam explicabo omnis
-                                         cupiditate ad cumque laborum distinctio at vero porro.
-                                     </p>
-                                 </div>
-                             </div>
-                         </div>
+                     <article class="comment-card d-flex gap-3 mb-4">
+                         <img style="width: 50px; height: 50px;"
+                             src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Aron Alvarado's avatar" />
 
-                         <div class="d-flex gap-1">
-                             <img class="h-25"
-                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s"
-                                 alt="" />
-                             <div>
-                                 <h6 class="fw-bold m-0">
-                                     Kier Nino
-                                     <span class="px-2"><i class="fa-solid fa-reply"></i> Reply</span>
-                                 </h6>
-                                 <div class="text-muted">
-                                     <p class="m-0 text">09 jan, 2025</p>
-                                     <p>
-                                         Lorem ipsum dolor sit amet consectetur adipisicing
-                                         elit. Doloribus architecto expedita odit fuga. Ea,
-                                         ullam eius fugit, a, tenetur ipsam explicabo omnis
-                                         cupiditate ad cumque laborum distinctio at vero porro.
+                         <div class="comment-content flex-grow-1">
+                             <div class="d-flex align-items-baseline gap-2 mb-1">
+                                 <h6 class="fw-bold m-0">Aron Alvarado</h6>
+                                 <span class="text-muted small">01 Jan, 2020</span>
+                                 <a href="#" class="text-secondary small fw-bold text-decoration-none">
+                                     <i class="fa-solid fa-reply"></i> Reply
+                                 </a>
+                             </div>
+                             <p class="comment-text mb-2">
+                                 Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut beatae.
+                             </p>
+
+                             <div class="comment-reply d-flex gap-3 mt-3 ps-5"> <img style="width: 50px; height: 50px;"
+                                     src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lynda Small's avatar" />
+                                 <div class="comment-content">
+                                     <div class="d-flex align-items-baseline gap-2 mb-1">
+                                         <h6 class="fw-bold m-0">Lynda Small</h6>
+                                         <span class="text-muted small">01 Jan, 2020</span>
+                                         <a href="#" class="text-secondary small fw-bold text-decoration-none">
+                                             <i class="fa-solid fa-reply"></i> Reply
+                                         </a>
+                                     </div>
+                                     <p class="comment-text mb-2">
+                                         Enim ipsa eum fugiat fuga repellat. Commodi quo quo dicta. Est ullam aspernatur ut vitae quia mollitia id non. Qui ad quas nostrum rerum sed necessitatibus aut est...
                                      </p>
                                  </div>
                              </div>
                          </div>
-                     </div>
+                     </article>
 
                      <!-- leave a reply section -->
                      <div class="mt-5 shadow py-4 px-3 d-flex flex-column gap-3 text-muted">
