@@ -10,7 +10,7 @@
     ?>
  <div class="container">
      <div class="min-vh-100 d-flex justify-content-center align-items-center">
-         <div class="shadow-lg  p-md-5  text-muted"
+         <div class="shadow-lg  p-5  text-muted"
              style="background-color: rgb(249, 249, 249); max-width: 900px;">
              <div class="w-100 px-2 px-md-5">
                  <div class="text-center mb-4">
