@@ -41,7 +41,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <body class="d-flex flex-column h-100">
     <?php $this->beginBody() ?>
 
-    <header class="container">
+    <header>
         <nav class="navbar navbar-expand-md bg-white navbar-light fixed-top">
             <div class="container">
                 <?= Html::a(
@@ -52,8 +52,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 13px;">
+                    <ul class="navbar-nav ms-auto gap-3">
                         <?php
                         // Helper function to determine if a link is active
                         function isActive($controller, $action = 'index')
@@ -167,89 +167,90 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     </main>
 
     <footer class="bg-dark m-0 ">
-        <div class="container p-3 p-md-5 px-sm-0">
+        <div class="container p-3 py-5">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 text-white g-4 g-lg-3">
                 <div class="col">
                     <!-- company section -->
-                    <h5>
-                        COMPANY
+                    <h5 class="mb-3">
+                        <b> COMPANY</b>
                     </h5>
-                    <div>
-                        <p>Sampaloc Bolinao, Pangasinan</p>
-                        <b>Phone</b> 0947325097
-                        </p>
-                        <p>
-                            <b>Email</b> example@gmail.com
-                        </p>
+                    <div class="text-white-50" style="font-size: 15px;">
+                        <address class="w-75 mb-4">Sampaloc, Bolinao, Pangasinan Carizal st. 087</address>
+                        <p class="m-0"><b>Phone: </b> 09271913996</p>
+                        <p class="m-0"><b>Email: </b> example@gmail.com</p>
                     </div>
                 </div>
 
                 <!-- useful link -->
                 <div class="col">
-                    <h5>
-                        Userful Link
-                    </h5>
-                    <ul class="list-unstyled ps-2">
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Home</a>
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">About us</a>
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Services</a>
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Terms of service</a>
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Privacy policy</a>
-                        </li>
-                    </ul>
+                    <h6 class="mb-3">
+                        <b>Userful Link</b>
+                    </h6>
+                    <div style="font-size: 13px;">
+                        <ul class="list-unstyled ps-3 d-flex flex-column gap-3">
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">Home</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">About us</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">Services</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">Terms of service</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">Privacy policy</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- our services -->
                 <div class="col">
-                    <h5>
-                        Our Services
-                    </h5>
-                    <ul class="list-unstyled ps-2">
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Web Design</a>
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Web Development</a>
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Product Management</a>
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Marketing</a>
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
-                            <a href="#" class="text-decoration-none text-white" style="font-size: 13px;">Graphic Design</a>
-                        </li>
-                    </ul>
+                    <h6 class="mb-3">
+                        <b>Our Services</b>
+                    </h6>
+                    <div style="font-size: 13px;">
+                        <ul class="list-unstyled ps-3 d-flex flex-column gap-3">
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">Web Design</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">Web Development</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">Product Management</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">Marketing</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <a href="#" class="text-decoration-none text-white-50">Graphic Design</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- newsletter -->
                 <div class="col">
-                    <h5 class="fw-bold">Join our Newsletter</h5>
-                    <div class="w-100">
-                        <p>
+                    <h6 class="mb-3"><b>Join our Newsletter</b></h6>
+                    <div>
+                        <p class="text-white-50" style="font-size: 15px;">
                             Lorem ipsum dolor sit amet consectetur adipisicing eliolest
-                            etur adipisicing eliolest
+                            etur adipisicing
                         </p>
-                        <div class="d-flex">
+                        <div class="d-flex mt-4">
                             <input class="w-100" type="text" />
                             <button class="bg-success text-white border-0 rounded-end-2 py-2 px-4">Subscribe</button>
                         </div>
