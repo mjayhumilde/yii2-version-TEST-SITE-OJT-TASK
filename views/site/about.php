@@ -9,20 +9,18 @@ $this->title = 'About';
 ?>
 
 <section class="site-about">
-    <!-- Information -->
-    <section>
-        <div class="container d-md-flex justify-content-center align-items-center gap-2 p-5">
-            <div class="d-flex flex-column gap-3 align-items-start">
-                <h1 class="text-dark">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut
-                    commodi eos ve
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 px-3 px-sm-0 py-5 g-3">
+            <div class="col">
+                <h1 class="text-dark mb-3">
+                    <b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut commodi eos ve</b>
                 </h1>
                 <h3>
                     Lorem ipsum dolor sit amet consectetmeetur distinctio Ipsam aut
                     commodi eos ve.
                 </h3>
             </div>
-            <div>
+            <div class="col">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
                     neque! Adipisci eaque ex quo id ratione, amet quae voluptate, sunt
@@ -54,7 +52,7 @@ $this->title = 'About';
                 </p>
             </div>
         </div>
-    </section>
+    </div>
 </section>
 
 <section>
@@ -65,7 +63,7 @@ $this->title = 'About';
                 <div class="d-flex justify-content-center mb-3">
                     <div class="bg-success mt-2" style="width: 50px; height: 3px;"></div>
                 </div>
-                <p class="text-secondary mx-auto">
+                <p class="text-secondary mx-auto  mb-4">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi iusto
                     dolores vero illum recusandae hic, odit natus ipsa quasi mollitia
                     perferendis maxime ab perspiciatis ut facilis quisquam vel libero! Rem.
@@ -74,13 +72,13 @@ $this->title = 'About';
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                 <?php foreach ($teams as $team): ?>
                     <div class="col">
-                        <div class="shadow text-center">
+                        <div class="shadow text-center overflow-hidden rounded">
                             <img class="card-image w-100"
                                 src="<?= $team['image'] ?>"
                                 alt="Team Member">
                             <div class="py-4 bg-white">
                                 <h6 class="fw-bold mb-0 fs-5"><?= $team['name'] ?></h6>
-                                <p class="fs-6 text-muted mb-0 pt-1 text-secondary"><?= $team['title'] ?></p>
+                                <p class="mb-0 pt-1 text-secondary" style="font-size: 14px;"><?= $team['title'] ?></p>
                             </div>
                         </div>
                     </div>
@@ -196,7 +194,7 @@ $this->title = 'About';
             </div>
         </div>
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 px-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 px-3 px-sm-0">
                 <?php foreach ($clients as $client): ?>
                     <div class="col col-12 col-sm-6 col-md-3 border p-3 justify-content-center align-items-center d-flex">
                         <?= $client['image'] ?>

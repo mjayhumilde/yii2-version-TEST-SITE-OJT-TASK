@@ -6,7 +6,7 @@ $this->title = 'My Yii Application';
 ?>
 <main>
     <!-- Hero -->
-    <section class="">
+    <section>
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
@@ -80,47 +80,48 @@ $this->title = 'My Yii Application';
 
     <!-- Information -->
     <section>
-        <div class="container d-md-flex justify-content-center align-items-center gap-2 p-5">
-            <div class="d-flex flex-column gap-3 align-items-start">
-                <h1 class="text-dark">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut
-                    commodi eos ve
-                </h1>
-                <h3>
-                    Lorem ipsum dolor sit amet consectetmeetur distinctio Ipsam aut
-                    commodi eos ve.
-                </h3>
-            </div>
-            <div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                    neque! Adipisci eaque ex quo id ratione, amet quae voluptate, sunt
-                    est culpa incidunt nemo totam laborum iure magnam fugiat labore!
-                </p>
-                <div class="py-1">
-                    <p class="mb-1">
-                        <i class="fa-solid fa-check-double text-success"></i> Lorem,
-                        ipsum dolor sit amet consectetur adipisicing elit. Illum neque
-                        eum libero nihil asperiores sequi voluptatibus soluta
-                        reprehenderit molestiae
-                    </p>
-                    <p class="mb-1">
-                        <i class="fa-solid fa-check-double text-success"></i> Lorem,
-                        ipsum dolor sit amet consectetur adipisicing elit. Illum neque
-                        eum libero nihil asperiores sequi voluptatibus soluta
-                        reprehenderit molestiae
-                    </p>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 px-3 px-sm-0 py-5 g-3">
+                <div class="col">
+                    <h1 class="text-dark mb-3">
+                        <b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut commodi eos ve</b>
+                    </h1>
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetmeetur distinctio Ipsam aut
+                        commodi eos ve.
+                    </h3>
+                </div>
+                <div class="col">
                     <p>
-                        <i class="fa-solid fa-check-double text-success"></i> Lorem,
-                        ipsum dolor sit amet consectetur adipisicing elit. Illum neque
-                        eum libero nihil asperiores sequi voluptatibus soluta
-                        reprehenderit molestiae
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+                        neque! Adipisci eaque ex quo id ratione, amet quae voluptate, sunt
+                        est culpa incidunt nemo totam laborum iure magnam fugiat labore!
+                    </p>
+                    <div class="py-1">
+                        <p class="mb-1">
+                            <i class="fa-solid fa-check-double text-success"></i> Lorem,
+                            ipsum dolor sit amet consectetur adipisicing elit. Illum neque
+                            eum libero nihil asperiores sequi voluptatibus soluta
+                            reprehenderit molestiae
+                        </p>
+                        <p class="mb-1">
+                            <i class="fa-solid fa-check-double text-success"></i> Lorem,
+                            ipsum dolor sit amet consectetur adipisicing elit. Illum neque
+                            eum libero nihil asperiores sequi voluptatibus soluta
+                            reprehenderit molestiae
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-check-double text-success"></i> Lorem,
+                            ipsum dolor sit amet consectetur adipisicing elit. Illum neque
+                            eum libero nihil asperiores sequi voluptatibus soluta
+                            reprehenderit molestiae
+                        </p>
+                    </div>
+                    <p class="fst-italic">
+                        Lorem, ipsum dolor sit amet consectenimi excepturi. Unde vero
+                        suscipit sint autem alias.
                     </p>
                 </div>
-                <p class="fst-italic">
-                    Lorem, ipsum dolor sit amet consectenimi excepturi. Unde vero
-                    suscipit sint autem alias.
-                </p>
             </div>
         </div>
     </section>
@@ -128,7 +129,7 @@ $this->title = 'My Yii Application';
     <!-- Services -->
     <section class="bg-light">
         <div class="container">
-            <div class="px-3 py-5 px-sm-5 js-sevices-container row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3 text-center">
+            <div class="px-3 py-5 px-sm-0 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3 text-center">
                 <?php foreach ($services as $service): ?>
                     <div class="col">
                         <div class="p-5 h-100 bg-white">
@@ -156,7 +157,7 @@ $this->title = 'My Yii Application';
 
 
             <!-- Gallery -->
-            <div class="row p-5">
+            <div class="row py-5 px-3 px-sm-0">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <img
                         src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=400&fit=crop"
@@ -222,7 +223,7 @@ $this->title = 'My Yii Application';
                 </div>
             </div>
             <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 px-5">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 px-3 px-sm-0">
                     <?php foreach ($clients as $client): ?>
                         <div class="col col-12 col-sm-6 col-md-3 border p-3 justify-content-center align-items-center d-flex">
                             <?= $client['image'] ?>
