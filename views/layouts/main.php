@@ -56,17 +56,24 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <ul class="navbar-nav ms-auto gap-3">
                         <?php
                         // Helper function to determine if a link is active
-                        function isActive($controller, $action = 'index')
+                        function isActive($controller, $actions)
                         {
                             $currentController = Yii::$app->controller->id;
                             $currentAction = Yii::$app->controller->action->id;
-                            return $currentController === $controller && $currentAction === $action;
+
+                            if (!is_array($actions)) {
+                                $actions = [$actions];
+                            }
+
+                            return $currentController === $controller && in_array($currentAction, $actions);
                         }
 
-                        // Home Link
-                        $homeClass = 'nav-link fw-bold text-secondary';
+                        // HOME Link
+                        $homeClass = 'nav-link fw-bold';
                         if (isActive('site', 'index')) {
                             $homeClass .= ' active text-success';
+                        } else {
+                            $homeClass .= ' text-black';
                         }
                         ?>
                         <li class="nav-item">
@@ -74,11 +81,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                         </li>
 
                         <?php
-                        // ABOUT Dropdown (assuming 'about', 'team', 'testimonial' are under 'site' controller)
-                        $isAboutActive = isActive('site', 'about') || isActive('site', 'team') || isActive('site', 'testimonial');
-                        $aboutClass = 'btn nav-link btn-secondary bg-white fw-bold dropdown-toggle border-0 text-secondary';
+                        // ABOUT Dropdown
+                        $isAboutActive = isActive('site', ['about', 'team', 'testimonial']);
+                        $aboutClass = 'btn nav-link btn-secondary bg-white fw-bold dropdown-toggle border-0';
                         if ($isAboutActive) {
                             $aboutClass .= ' active text-success';
+                        } else {
+                            $aboutClass .= ' text-black';
                         }
                         ?>
                         <li class="nav-item">
@@ -96,9 +105,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                         <?php
                         // SERVICES Link
-                        $servicesClass = 'nav-link fw-bold text-secondary';
+                        $servicesClass = 'nav-link fw-bold';
                         if (isActive('site', 'services')) {
                             $servicesClass .= ' active text-success';
+                        } else {
+                            $servicesClass .= ' text-black';
                         }
                         ?>
                         <li class="nav-item">
@@ -107,9 +118,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                         <?php
                         // PRICING Link
-                        $pricingClass = 'nav-link fw-bold text-secondary';
+                        $pricingClass = 'nav-link fw-bold';
                         if (isActive('site', 'pricing')) {
                             $pricingClass .= ' active text-success';
+                        } else {
+                            $pricingClass .= ' text-black';
                         }
                         ?>
                         <li class="nav-item">
@@ -118,9 +131,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                         <?php
                         // BLOG Link
-                        $blogClass = 'nav-link fw-bold text-secondary';
-                        if (isActive('site', 'blog')) {
+                        $blogClass = 'nav-link fw-bold';
+                        if (isActive('site', ['blog', 'single-blog'])) {
                             $blogClass .= ' active text-success';
+                        } else {
+                            $blogClass .= ' text-black';
                         }
                         ?>
                         <li class="nav-item">
@@ -129,38 +144,61 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                         <?php
                         // CONTACT Link
-                        $contactClass = 'nav-link fw-bold text-secondary';
+                        $contactClass = 'nav-link fw-bold';
                         if (isActive('site', 'contact')) {
                             $contactClass .= ' active text-success';
+                        } else {
+                            $contactClass .= ' text-black';
                         }
                         ?>
                         <li class="nav-item">
                             <?= Html::a('CONTACT', ['/site/contact'], ['class' => $contactClass]) ?>
                         </li>
                     </ul>
-                    <div class="text-muted ps-2 d-flex d-md-none align-items-center justify-content-center gap-2 fs-3 mt-5 mt-md-0">
+                    <di nv class="text-secondary p-2 d-flex d-md-none align-items-center justify-content-center gap-3 fs-3 mt-5 mt-md-0">
                         <i class="navs fa-brands fa-twitter social"></i>
                         <i class="navs fa-brands fa-facebook social"></i>
                         <i class="navs fa-brands fa-instagram social"></i>
                         <i class="navs fa-brands fa-linkedin social"></i>
-                    </div>
-                    <div class="border-start border-muted text-muted ps-2 d-none d-md-flex align-items-center justify-content-center gap-2">
-                        <i class="navs fa-brands fa-twitter social"></i>
-                        <i class="navs fa-brands fa-facebook social"></i>
-                        <i class="navs fa-brands fa-instagram social"></i>
-                        <i class="navs fa-brands fa-linkedin social"></i>
-                    </div>
+                </div>
+                <div class="border-start border-2 border-muted text-secondary ps-2 d-none d-md-flex align-items-center justify-content-center gap-3" style="font-size: 15px;">
+                    <i class="navs fa-brands fa-twitter social"></i>
+                    <i class="navs fa-brands fa-facebook social"></i>
+                    <i class="navs fa-brands fa-instagram social"></i>
+                    <i class="navs fa-brands fa-linkedin social"></i>
                 </div>
             </div>
+            </div>
         </nav>
+
+        <!-- // this is the breadcrumbs -->
+        <!-- i want to hide this on index.php, register.php, and login.php -->
+        <?php
+        $currentRoute = Yii::$app->controller->id . '/' . Yii::$app->controller->action->id;
+        $excludedRoutes = ['site/index', 'site/register', 'site/login'];
+        $hideBreadcrumbs = in_array($currentRoute, $excludedRoutes) ? 'd-none' : '';
+        ?>
+        <div class="bg-success text-white py-2 <?= $hideBreadcrumbs ?>" style="margin-top: 4rem;">
+            <div class="container d-flex justify-content-between align-items-center">
+                <p class="m-0 fs-3"><?= Html::encode($this->title) ?></p>
+
+                <?php if (!empty($this->params['breadcrumbs'])): ?>
+                    <?= yii\bootstrap5\Breadcrumbs::widget([
+                        'links' => $this->params['breadcrumbs'],
+                        'options' => ['class' => ['breadcrumb', 'm-0']],
+                        'itemTemplate' => "<li class=\"breadcrumb-item text-white\">{link}</li>\n",
+                        'activeItemTemplate' => "<li class=\"breadcrumb-item active text-white\" aria-current=\"page\">{link}</li>\n",
+                    ]) ?>
+                <?php endif ?>
+            </div>
+        </div>
+        <!-- end -->
     </header>
 
 
-    <main id="main" class=" mt-5" role="main">
-        <div class="mt-3">
-            <?php if (!empty($this->params['breadcrumbs'])): ?>
-                <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]) ?>
-            <?php endif ?>
+    <main id="main" role="main">
+        <div>
+
             <?= Alert::widget() ?>
             <?= $content ?>
         </div>
@@ -187,25 +225,25 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                         <b>Userful Link</b>
                     </h6>
                     <div style="font-size: 13px;">
-                        <ul class="list-unstyled ps-3 d-flex flex-column gap-3">
+                        <ul class="list-unstyled ps-2 d-flex flex-column gap-3">
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size: 8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">Home</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size: 8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">About us</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size: 8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">Services</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size: 8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">Terms of service</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size: 8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">Privacy policy</a>
                             </li>
                         </ul>
@@ -217,25 +255,25 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                         <b>Our Services</b>
                     </h6>
                     <div style="font-size: 13px;">
-                        <ul class="list-unstyled ps-3 d-flex flex-column gap-3">
+                        <ul class="list-unstyled ps-2 d-flex flex-column gap-3">
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size:  8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">Web Design</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size:  8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">Web Development</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size:  8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">Product Management</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size: 8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">Marketing</a>
                             </li>
                             <li>
-                                <i class="fa-solid fa-chevron-right" style="color: #008000;"></i>
+                                <i class="fa-solid fa-chevron-right me-1 text-success" style="font-size:  8px;"></i>
                                 <a href="#" class="text-decoration-none text-white-50">Graphic Design</a>
                             </li>
                         </ul>
@@ -260,8 +298,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         </div>
 
         <!-- bottom footer -->
-        <div class="bg-black px-5 py-2 m-0">
-            <div class="container px-0 px-md-5 py-2">
+        <div class="bg-black  py-4 m-0">
+            <div class="container py-2">
                 <div class="row text-white d-flex justify-content-between text-center g-3">
                     <!-- Left -->
                     <div class="col-auto d-flex align-items-center">
@@ -272,17 +310,20 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                     <!-- Right -->
                     <div class="col-auto fs-6">
-                        <span class="p-2 bg-dark rounded me-1">
+                        <span class="p-2 bg-dark rounded me-2">
                             <i class="fa-brands fa-twitter"></i>
                         </span>
-                        <span class="p-2 bg-dark rounded me-1">
+                        <span class="p-2 bg-dark rounded me-2">
                             <i class="fa-brands fa-facebook-f"></i>
                         </span>
-                        <span class="p-2 bg-dark rounded me-1">
+                        <span class="p-2 bg-dark rounded me-2">
                             <i class="fa-brands fa-instagram"></i>
                         </span>
-                        <span class="p-2 bg-dark rounded me-1">
+                        <span class="p-2 bg-dark rounded me-2">
                             <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <span class="p-2 bg-dark rounded me-2">
+                            <i class="fa-brands fa-twitter"></i>
                         </span>
                     </div>
 
