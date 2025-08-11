@@ -6,10 +6,10 @@
     use yii\helpers\Url;
 
     $this->title = 'Blog';
-    // $this->params['breadcrumbs'][] = $this->title;
+    $this->params['breadcrumbs'][] = $this->title;
     ?>
 
- <section class="mt-5">
+ <section>
      <div class="container my-5">
          <!-- blog cards container -->
          <div class="row row-cols-1 row-cols-lg-2 mt-4 d-flex flex-column-reverse flex-lg-row g-3">

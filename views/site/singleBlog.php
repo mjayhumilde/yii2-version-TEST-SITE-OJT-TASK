@@ -6,7 +6,8 @@
     use yii\helpers\Url;
 
     $this->title = 'Single BLog';
-    // $this->params['breadcrumbs'][] = $this->title;
+    $this->params['breadcrumbs'][] = ['label' => 'Blog', 'url' => ['site/blog']];
+    $this->params['breadcrumbs'][] = $this->title;
     ?>
 
  <section class="mt-5">

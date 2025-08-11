@@ -6,7 +6,7 @@
     use yii\helpers\Url;
 
     $this->title = 'Register';
-    // $this->params['breadcrumbs'][] = $this->title;
+    $this->params['breadcrumbs'][] = $this->title;
     ?>
 
  <div class="container">

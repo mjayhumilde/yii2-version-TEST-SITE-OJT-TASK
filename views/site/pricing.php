@@ -5,10 +5,10 @@
     use yii\helpers\Html;
 
     $this->title = 'Pricing';
-    // $this->params['breadcrumbs'][] = $this->title;
+    $this->params['breadcrumbs'][] = $this->title;
     ?>
 
- <section class="mt-5">
+ <section>
      <div class="container px-4 pb-5 p-sm-5 px-sm-0">
          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
              <div class="col">

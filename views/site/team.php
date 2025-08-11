@@ -5,7 +5,7 @@
 use yii\helpers\Html;
 
 $this->title = 'Team';
-// $this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <section>

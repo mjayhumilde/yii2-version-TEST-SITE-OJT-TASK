@@ -7,7 +7,7 @@
 use app\assets\LeafletAsset;
 
 $this->title = 'Contact';
-// $this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $this->title;
 
 LeafletAsset::register($this);
 
@@ -34,8 +34,8 @@ $this->registerJs(
 
 ?>
 
-<section class="mt-5">
-    <div class="js-map w-100 bg-primary mt-5" style="height: 20rem"></div>
+<section class="">
+    <div class="js-map w-100 bg-primary" style="height: 20rem"></div>
 </section>
 
 <section>

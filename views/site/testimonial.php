@@ -5,10 +5,10 @@
 use yii\helpers\Html;
 
 $this->title = 'Testimonial';
-// $this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<section class="mt-5">
+<section>
     <div class="container p-5">
         <div class="row g-4 justify-content-center ">
             <?php foreach ($testimonials as $testimonial): ?>
