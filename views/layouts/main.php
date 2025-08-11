@@ -34,6 +34,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         height: 100vh;
         object-fit: cover;
     }
+
+    .breadcrumb-item a {
+        text-decoration: none;
+        color: white;
+    }
 </style>
 <?php $this->head() ?>
 </head>
@@ -172,7 +177,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         </nav>
 
         <!-- // this is the breadcrumbs -->
-        <!-- i want to hide this on index.php, register.php, and login.php -->
         <?php
         $currentRoute = Yii::$app->controller->id . '/' . Yii::$app->controller->action->id;
         $excludedRoutes = ['site/index', 'site/register', 'site/login'];
@@ -186,13 +190,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <?= yii\bootstrap5\Breadcrumbs::widget([
                         'links' => $this->params['breadcrumbs'],
                         'options' => ['class' => ['breadcrumb', 'm-0']],
-                        'itemTemplate' => "<li class=\"breadcrumb-item text-white\">{link}</li>\n",
-                        'activeItemTemplate' => "<li class=\"breadcrumb-item active text-white\" aria-current=\"page\">{link}</li>\n",
+                        'itemTemplate' => "<li class=\"breadcrumb-item\">{link}</li>\n", // Removed `text-white`
+                        'activeItemTemplate' => "<li class=\"breadcrumb-item active\" style=\"color: white;\" aria-current=\"page\">{link}</li>\n", // Removed `text-white`
                     ]) ?>
                 <?php endif ?>
             </div>
         </div>
-        <!-- end -->
     </header>
 
 
